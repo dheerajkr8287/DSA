@@ -33,17 +33,19 @@ public class check_prime {
             System.out.println("not prime1");
 
         }
-        else {
-            for (int i = 1; i <= n; i++) {
-                if (n % i == 0) {
-                    temp++;
-                }
-            }
-            if (temp == 2) {
-                System.out.println("prime");
-            } else {
-                System.out.println("not prime");
-            }
+        for(int i=1;i<=n;i++){
+        if(n%i==0){
+        temp++;
+        }
+        }
+        if(temp==2){
+                    System.out.println("prime1");
+
+        }else{
+                    System.out.println("not prime1");
+
+        }
+        
         }
         */
 
