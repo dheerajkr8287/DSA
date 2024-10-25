@@ -43,45 +43,25 @@ Constraints:
      */
 
     class Solution {
+        int left=0;
+        int right=0;
+        int diagonalSumDifference(int N, int[][] Grid) {
+            // code here
+            int k=Grid.length-1;
+            for(int i=0;i<N;i++){
+                right+=Grid[i][k-i];
 
-        public int maxProfit(int[] prices) {
-             //T.C=O(N)
-
-            // int min=Integer.MAX_VALUE;
-            // int maxProfit=0;
-            // for(int i=0;i<prices.length;i++){
-            //     if(prices[i]<min){
-            //         min=prices[i];
-            //     }
-            //     int profit=prices[i]-min;
-            //     if(profit>maxProfit){
-            //         maxProfit=profit;
-            //     }
-            // }
-            // return maxProfit;
+                for(int j=0;j<=i;j++){
+                    if(i==j ){
+                        left+=Grid[i][j] ;
 
 
+                    }
+                }
 
-
-
-            int min=prices[0];
-            int maxProfit=0;
-            for(int i=0;i<prices.length;i++){
-                min=Math.min(prices[i],min);
-                int profit=prices[i]-min;
-                maxProfit=Math.max(maxProfit,profit);
             }
-            return maxProfit;
-
-
-
-
-
-
-
-
-
-
+            return Math.abs(left-right);
         }
     }
+
 }

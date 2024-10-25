@@ -36,6 +36,7 @@ Constraints:
         // int arr[]=new int[10^4+1];
         public int maxProfit(int[] prices) {
 
+            //T.C=O(N)
 
             // int min=Integer.MAX_VALUE;
             // int maxProfit=0;
