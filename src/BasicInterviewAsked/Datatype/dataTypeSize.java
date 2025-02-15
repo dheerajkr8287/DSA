@@ -1,4 +1,4 @@
-package Datatype;
+package BasicInterviewAsked.Datatype;
 
 
 
