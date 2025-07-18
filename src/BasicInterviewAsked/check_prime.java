@@ -51,6 +51,7 @@ public class check_prime {
         Start the loop with i = 1, and it runs while i * i <= 7 (i.e., i <= sqrt(7) ≈ 2.64, so i runs from 1 to 2).
         */
 
+        if(n<=1)return false;
         for(int i=1;i*i<=n;i++){
             if(n%i==0){
                 count++;
