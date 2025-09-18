@@ -1,5 +1,7 @@
 package MathQuestion;
 
+import java.util.stream.IntStream;
+
 public class Count_the_Digits_That_Divide_a_Number {
 
 //    leetcode 2520:Count the Digits That Divide a Number
@@ -36,19 +38,47 @@ num does not contain 0 as one of its digits.
 
 
     //solutions
-    class Solution {
-        public int countDigits(int num) {
-            int count=0;
-            int n=num;
-            while(n>0){
-                int last=n%10;
-                if(last>0 && num%last==0){
-                    count=count+1;
-                }
-                n=n/10;
-            }
-            return count;
+    public int countDigits(int num) {
+        // int count=0;
+        // int n=num;
+        // while(num>0){
+        //     int last=num%10;
+        //     if(last!=0 && n%last==0){
+        //         count++;
+        //     }
+        //     num=num/10;
+        // }
+        // return count;
 
-        }
+
+
+        //using java 8
+
+        int n=num;
+        int length=(int) Math.log10(num)+1;
+        /**
+         n = 1012
+         length = (int) Math.log10(1012) + 1 = 3.00... + 1 = 4        → The number has 4 digits
+
+         Iteration 1 → i = 0
+         Extract digit: (1012 / 10^0) % 10 = (1012 / 1) % 10 = 1012 % 10 = 2
+         Check: 2 != 0 && 1012 % 2 == 0 →  true
+         Keep digit 2.
+
+         goes till i
+         */
+
+        return (int) IntStream.range(0,length)
+                .map(i->(int)(num/(int)Math.pow(10,i)%10)) // extract digit at position i
+                .filter(l->l!=0 && n%l==0)                 // check divisibility
+                .count();
+
+
+
+
+
+
+
+
     }
 }
