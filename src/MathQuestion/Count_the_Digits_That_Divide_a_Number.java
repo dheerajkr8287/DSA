@@ -80,5 +80,11 @@ num does not contain 0 as one of its digits.
 
 
 
+
     }
+
+    /**
+     * Overall: O(d log d) due to Math.pow.
+     *  Space Complexity: O(1) (no string conversion, just stream pipeline overhead).
+     */
 }
