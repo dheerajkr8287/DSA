@@ -23,28 +23,66 @@ Constraints:
 0<=arr[i]<=105
      */
 
-    class Solution {
+
         int i=0;
         public void reverseArray(int arr[]) {
             // code here
 
-            int n=arr.length;
+            //by loop
+            // int l=0;
+            // int r=arr.length-1;
+            // while(l<r){
+            //     int tem=arr[l];
+            //     arr[l]=arr[r];
+            //     arr[r]=tem;
 
+            //     l++;
+            //     r--;
+            // }
+
+
+            //recursive approch
+            int n=arr.length;
             if(i==n/2){
                 return ;
             }
-
             int swap=arr[i];
             arr[i]=arr[n-i-1];
             arr[n-i-1]=swap;
             i++;
-
-
-
             reverseArray( arr);
 
+            //BY COLLECTION
+            // List<Integer> list=new ArrayList<>();
+            // for(int num:arr){
+            //     list.add(num);
+            // }
+            // Collections.reverse(list);
+            // for(int i=0;i<arr.length;i++){
+            //     arr[i]=list.get(i);
+            // }
 
+
+            //RECURSION
+            // int n=arr.length-1;
+            // f(0,n,arr);
 
         }
-    }
+
+//BY USING RECURSION
+    // public void f(int l,int r,int arr[]){
+    //     if(l>=r)return;
+
+    //     int tem=arr[l];
+    //     arr[l]=arr[r];
+    //     arr[r]=tem;
+
+    //     f(l+1,r-1,arr);
+
+    // }
+
+
+
+
+
 }
