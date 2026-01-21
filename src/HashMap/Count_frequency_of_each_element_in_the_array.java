@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Handler;
 
-public class Count_requency_of_each_element_in_the_array {
+public class Count_frequency_of_each_element_in_the_array {
     /*
     Problem Statement: Given an array, we have found the number of occurrences of each element in the array.
 
