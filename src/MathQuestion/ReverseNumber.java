@@ -52,6 +52,26 @@ Constraints:
 
             }
         }
+
+        public int reverse1(int x) {
+            int  reversed=0;
+            while(x!=0){
+                int last=x%10;
+                x=x/10;
+
+
+                //overflow
+                if(reversed>Integer.MAX_VALUE/10 || reversed<Integer.MIN_VALUE/10){
+                    return 0;
+                }
+
+                reversed=reversed*10+last;
+            }
+
+            return reversed;
+
+
+        }
     }
 
 

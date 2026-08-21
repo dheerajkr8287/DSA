@@ -46,6 +46,26 @@ Constraints:
 
     //User function Template for Java
     class Solution{
+
+        //  this is brute force --O(n)^2
+        public static long sumOfDivisors1(long n) {
+            // code here
+            long total=0;
+            for(int i=1;i<=n;i++){
+                int sum=0;
+                for(int j=1;j<=i;j++){
+                    if(i%j==0){
+                        sum=sum+j;
+                    }
+
+                }
+                total=total+sum;
+
+            }
+            return total;
+        }
+
+        //this is better O(n)
         static long sumOfDivisors(int N){
             // code here
             long sum=0;
